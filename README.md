@@ -21,6 +21,7 @@ our changes are committed to this repo with:
 
     git clean -fd && git reset HEAD . && git checkout .
     git pull
+    composer install
 
 
 Ubuntu users

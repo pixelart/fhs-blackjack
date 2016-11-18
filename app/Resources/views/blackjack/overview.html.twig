@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block actions %}
+    <ul class="nav nav-pills pull-right">
+        <li role="presentation" class="active">
+            <a href="{{ path('game_new') }}">
+                {{ 'game.new'|trans({}, 'blackjack') }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
