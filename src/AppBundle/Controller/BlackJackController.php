@@ -41,11 +41,11 @@ class BlackJackController extends Controller
      */
     public function gameAction(Game $game)
     {
-        $form = $this->createForm(PlayerType::class, new Player());
+        $playerForm = $this->createForm(PlayerType::class, new Player());
 
         return $this->render('blackjack/game.html.twig', [
             'game' => $game,
-            'form' => $form->createView(),
+            'player_form' => $playerForm->createView(),
         ]);
     }
 }
