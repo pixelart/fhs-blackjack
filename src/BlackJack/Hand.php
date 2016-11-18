@@ -20,7 +20,21 @@ class Hand
     {
         $sum = 0;
         foreach ($this->cards as $card) {
-            $sum += $card->getValue();
+            $value = $card->getValue();
+            switch($value) {
+                case 'A':
+                    $value = 11;
+                    break;
+                case 'J':
+                case 'Q':
+                case 'K':
+                    $value = 10;
+                    break;
+                default:
+                    $value = (int) $value;
+            }
+
+            $sum += $value;
         }
 
         return $sum;
