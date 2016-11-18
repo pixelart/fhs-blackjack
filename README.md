@@ -13,6 +13,15 @@ Uncomment the `vendor/` in your `.gitignore` and commit the changes:
  
     git commit -am "Removed vendor from git"
 
+Troubleshooting
+---------------
+
+If you fucked up or can't hold the speed, you can get in sync with us, if
+our changes are committed to this repo with:
+
+    git clean -fd && git reset HEAD . && git checkout .
+    git pull
+
 
 Ubuntu users
 ------------
