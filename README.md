@@ -1,34 +1,45 @@
 Black Jack with Symfony
 =======================
 
-Clone this project:
+If you are new, clone this project and install vendors:
 
     git clone https://github.com/pixelart/fhs-blackjack.git
-    
-Now remove the vendor folder from git:
+    composer install
 
-    git rm --cached -r vendor/
-    
-Uncomment the `vendor/` in your `.gitignore` and commit the changes:
- 
-    git commit -am "Removed vendor from git"
+If you were at the lectures and already have the project, clean up
+your changes and pull the latest state from here:
 
-Troubleshooting
----------------
-
-If you fucked up or can't hold the speed, you can get in sync with us, if
-our changes are committed to this repo with:
+Be careful to do this in your project directory, where you have cloned it!
 
     git clean -fd && git reset HEAD . && git checkout .
     git pull
     composer install
 
+Adapt your PHP installation
+---------------------------
 
-Ubuntu users
-------------
+### Windows users
+
+Make sure you have the following extensions uncommented in your `php.ini`:
+
+```
+extension=php_curl.dll
+extension=php_fileinfo.dll
+extension=php_gd2.dll
+extension=php_intl.dll
+extension=php_mbstring.dll
+extension=php_openssl.dll
+extension=php_pdo_sqlite.dll
+```
+
+### Mac users
+
+It's already included in your PHP install.
+
+### Ubuntu users
 
 You need to install the following packages:
 
 ```
-sudo apt-get install php-curl php-intl php-json php-opcache php-xml php-mbstring php-bz2 php-zip php-xdebug
+sudo apt install php-intl php-opcache php-sqlite3 php-xdebug
 ```
