@@ -27,25 +27,19 @@ class Player
      *
      * @var string
      */
-    private $name;
+    private $name = '';
 
     /**
      * @ORM\Column(type="integer")
      *
      * @var int
      */
-    private $chips;
+    private $chips = 0;
 
     /**
      * @var Hand
      */
     private $currentHand;
-
-    public function __construct(string $name, int $chips)
-    {
-        $this->name = $name;
-        $this->chips = $chips;
-    }
 
     public function getId(): int
     {
@@ -57,9 +51,19 @@ class Player
         return $this->name;
     }
 
+    public function setName(string $name)
+    {
+        $this->name = $name;
+    }
+
     public function getChips(): int
     {
         return $this->chips;
+    }
+
+    public function setChips(int $chips)
+    {
+        $this->chips = $chips;
     }
 
     public function addCard(Card $card)

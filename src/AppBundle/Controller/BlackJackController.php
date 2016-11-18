@@ -5,6 +5,8 @@ declare(strict_types = 1);
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Game;
+use AppBundle\Entity\Player;
+use AppBundle\Form\Type\PlayerType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -39,8 +41,11 @@ class BlackJackController extends Controller
      */
     public function gameAction(Game $game)
     {
+        $form = $this->createForm(PlayerType::class, new Player());
+
         return $this->render('blackjack/game.html.twig', [
             'game' => $game,
+            'form' => $form->createView(),
         ]);
     }
 }
